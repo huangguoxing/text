@@ -1,23 +1,56 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+const Home = ()=> import('../views/Home')
+const Films = ()=> import('../views/Home/children/films.vue')
+const Cimemas = ()=> import('../views/Home/children/cinemas.vue')
+const Brand = ()=>import('../views/Home/children/brand.vue')
+const Center = ()=>import('../views/Home/children/center.vue')
   const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    {
+      path:'/',
+      component: Home,
+      children:[
+        {
+          path: 'films',
+          component: Films
+        },
+        {
+          path:'cinemas',
+          component: Cimemas
+        },
+        {
+          path:'brand',
+          component: Brand
+        },
+        {
+          path: 'center',
+          component:Center
+        },
+        {
+          path: '',
+          redirect: '/films'
+        }
+      ]
+    },
+    {
+      path: '/film/:filmId',
+      component: ()=>import('../views/Film/index.vue')
+    },
+    {
+      path: '/city',
+      component: ()=>import('../views/City/index.vue')
+    },
+    {
+      path:'/money',
+      component: ()=>import('../views/Money/index.vue')
+    },
+    {
+      path:'/login',
+      component: ()=>import('../views/Login/index.vue')
+    }
 ]
 
 const router = new VueRouter({

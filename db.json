@@ -1,0 +1,17 @@
+{
+  "banner":[
+    {
+      "bannerid":1,
+      "img":"https://static.maizuo.com/v5/upload/3ef733f7e8a2107222f6c9707919ae36.jpg?x-oss-process=image/quality,Q_70"
+
+    },
+    {
+        "bannerid":2,
+        "img":"https://pic.maizuo.com/usr/movie/e8f55854ab05cada86c545a31022379e.jpg?x-oss-process=image/quality,Q_70"
+    },
+    {
+        "bannerid":2,
+        "img":"https://pic.maizuo.com/usr/movie/40889de56b50bf649ac6f23ecea991b4.jpg?x-oss-process=image/quality,Q_70"
+    }
+  ]
+}
